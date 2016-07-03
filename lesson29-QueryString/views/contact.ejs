@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact</title>
+        <style media="screen">
+            body {
+                background: skyblue;
+                color: #fff;
+                font-family: verdana;
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 48px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-align: center;
+            }
+
+            p {
+                font-size 16px;
+                text-align: center;
+            }
+
+            input[type="email"],
+            input[type=text] {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                box-sizing: border-box;
+            }
+            input[type=button],
+            input[type=reset],
+            input[type=submit] {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <% include partials/nav.ejs %>
+        <h1>Contact Us!</h1>
+        <p>Contact the coolest cat on the web</p>
+        <p><%= qs.dept %></p>
+        <p><%= qs.person %></p>
+
+        <!-- FORM -->
+        <form id="contact-form">
+            <label for="who">Who do you want to contact?</label>
+            <input type="text" name="who" value="<%= qs.person %>">
+            <label for="department">Which department?</label>
+            <input type="text" name="departement" value="<%= qs.dept %>">
+            <label for="email">Your email</label>
+            <input type="email" name="email">
+            <input type="submit" value="submit">
+        </form>
+
+    </body>
+
+</html>
