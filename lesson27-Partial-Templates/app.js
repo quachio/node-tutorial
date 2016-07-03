@@ -8,15 +8,17 @@ app.set('view engine', 'ejs');
 // Static
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  //res.sendFile(__dirname + '/index.html');
+  res.render('index');
+});
+
+app.get('/contact', (req, res) => {
+  //res.sendFile(__dirname + '/contact.html');
+  res.render('contact');
 });
 
 app.get('/styles.css', (req, res) => {
   res.sendFile(__dirname + '/styles.css');
-});
-
-app.get('/contact', (req, res) => {
-  res.sendFile(__dirname + '/contact.html');
 });
 
 // Dynamic, Javascript Templete Engine - EJS
